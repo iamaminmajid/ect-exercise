@@ -2,10 +2,10 @@ import { View, Text, StyleSheet } from "react-native";
 import { useProduct } from "@/constants/Context";
 import { Product } from "@/constants/Types";
 import { useLocalSearchParams } from "expo-router";
-import ProductImage from "./Overview/ProductImage";
-import Ratings from "./Overview/Ratings";
-import Price from "./Overview/Price";
-import AddToCart from "./Overview/AddToCart";
+import ProductImage from "./overview/ProductImage";
+import Ratings from "./overview/Ratings";
+import Price from "./overview/Price";
+import AddToCart from "./overview/AddToCart";
 
 export default function ProductOverview() {
     const { id } = useLocalSearchParams();
@@ -15,13 +15,13 @@ export default function ProductOverview() {
         <View>
             <ProductImage id={Number(id)} />
             {product?.stock && product?.stock < 10 && <View style={styles.stockLeft}>
-                <Text style={styles.stock}>Only {product?.stock} left in stock</Text>  
+                <Text style={styles.stock} testID="stock-warning">Only {product?.stock} left in stock</Text>  
             </View>}
             <View>
                 <Ratings id={Number(id)} />
 
-                <Text style={styles.title}>{product?.title}</Text>
-                <Text style={styles.description}>{product?.description}</Text>
+                <Text style={styles.title} testID="product-title">{product?.title}</Text>
+                <Text style={styles.description} testID="product-description">{product?.description}</Text>
 
                 <Price id={Number(id)} />
 

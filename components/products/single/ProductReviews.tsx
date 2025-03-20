@@ -1,6 +1,6 @@
 import { Text, StyleSheet, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import Reviews from "./Meta/ReviewsList";
+import Reviews from "./meta/ReviewsList";
 
 export default function ProductReviews() {
 

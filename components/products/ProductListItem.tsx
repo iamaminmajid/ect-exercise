@@ -13,18 +13,18 @@ export default function ProductListItem({ item }: { item: Product }) {
         })}>
             
             <View style={styles.imageContainer}>
-                <Image source={{ uri: item.thumbnail }} style={styles.productImage} />
+                <Image source={{ uri: item.thumbnail }} testID="product-image" style={styles.productImage} />
             </View>
 
-            <Text style={styles.productTitle}>{item.title}</Text>
+            <Text style={styles.productTitle} testID="product-title">{item.title}</Text>
             <View style={styles.priceAndRatingContainer}>
-                <Text style={styles.productPrice}>${item.price}</Text>
+                <Text style={styles.productPrice} testID="product-price">${item.price}</Text>
                 <View style={styles.ratingContainer}>
                     <Ionicons name="star" size={16} color="#f2b200" />
-                    <Text style={styles.ratingText}>{item.rating}</Text>
+                    <Text style={styles.ratingText} testID="product-rating">{item.rating}</Text>
                 </View>
             </View>
-            <Text style={styles.stockInfo}>Only {item.stock} left</Text>
+            <Text style={styles.stockInfo} testID="product-stock">Only {item.stock} left</Text>
         </TouchableOpacity>
     );
 }

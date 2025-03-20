@@ -3,9 +3,9 @@ import { Product } from "@/constants/Types";
 import { useProduct } from "@/constants/Context";
 import { useLocalSearchParams } from "expo-router";
 import Accordion from "@/components/Accordion";
-import QR from "./Meta/QR";
-import Tags from "./Meta/Tags";
-import InfoBox from "./Meta/InfoBox";
+import QR from "./meta/QR";
+import Tags from "./meta/Tags";
+import InfoBox from "./meta/InfoBox";
 export default function ProductMeta() {
 
     const { id } = useLocalSearchParams();
@@ -16,7 +16,7 @@ export default function ProductMeta() {
 
             <Tags id={Number(id)} />
 
-            <View style={styles.infoBoxContainer}>
+            <View style={styles.infoBoxContainer} testID="info-box-container">
                 <InfoBox title="Brand" icon="information-circle-outline" value={product?.brand || ""} />
                 <InfoBox title="Category" icon="grid-outline" value={product?.category || ""} />
                 <InfoBox title="Weight" icon="speedometer-outline" value={product?.weight?.toString() + " kg" || ""}/>

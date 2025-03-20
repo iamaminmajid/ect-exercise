@@ -3,7 +3,7 @@ import { Product } from "@/constants/Types";
 import { useProduct } from "@/constants/Context";
 import { useLocalSearchParams } from "expo-router";
 import Accordion from "@/components/Accordion";
-import QR from "./Meta/QR";
+import QR from "./meta/QR";
 
 
 export default function ProductOtherInfo() {

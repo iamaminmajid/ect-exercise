@@ -53,4 +53,5 @@ export interface Product {
     paginationData: Product[];
     setPaginationData: (data: Product[]) => void;
     itemsPerPage: number;
+    showPagination: boolean;
   }
